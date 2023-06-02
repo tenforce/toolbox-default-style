@@ -1,0 +1,245 @@
+@keyframes bggradientflow {
+  0%   {  background-position: 0% 0%;     }
+  50%  {  background-position: 100% 100%; }
+  100% {  background-position: 0% 0%;     }
+}
+
+@keyframes blur5 {
+  100% {  filter: blur(5px); }
+}
+
+@keyframes cursorMove {
+  100% {
+    cursor: move;
+  }
+}
+
+@keyframes cursorNS {
+  100% {
+    cursor: ns-resize;
+  }
+}
+
+@keyframes focusUpDown {
+  0%,
+  100%  { transform: translate(0, 0px);  }
+  33%   { transform: translate(0, -1px); }
+  66%   { transform: translate(0, 1px);  }
+}
+
+@keyframes focusDownUp {
+  0%,
+  100%  { transform: translate(0, 0px);   }
+  33%   { transform: translate(0, 1px);   }
+  66%   { transform: translate(0, -1px);  }
+}
+
+@keyframes focus2UpDown {
+  0%,
+  100%  { transform: translate(0, 0px);   }
+  33%   { transform: translate(0, -2px);  }
+  66%   { transform: translate(0, 2px);   }
+}
+
+@keyframes focus2DownUp {
+  0%,
+  100%  { transform: translate(0, 0px);   }
+  33%   { transform: translate(0, 2px);   }
+  66%   { transform: translate(0, -2px);  }
+}
+
+@keyframes hoverDown {
+  0%    { transform: translate(0, 0px); }
+  100%  { transform: translate(0, 1px); }
+}
+
+@keyframes hoverUp {
+  0%    { transform: translate(0, 1px); }
+  100%  { transform: translate(0, 0px); }
+}
+
+@keyframes hover2Down {
+  0%    { transform: translate(0, 0px); }
+  100%  { transform: translate(0, 2px); }
+}
+
+@keyframes hover2Up {
+  0%    { transform: translate(0, 0px);   }
+  100%  { transform: translate(0, -2px);  }
+}
+
+@keyframes movebgstripes {
+  100% { background-position: 100% 100%; }
+}
+
+@keyframes multicolor {
+  0%   {  color: #000;    }
+  20%  {  color: #c90000; }
+  40%  {  color: #c39132; }
+  60%  {  color: #0ad1e9; }
+  80%  {  color: #180c49; }
+  100% {  color: #000;    }
+}
+
+@keyframes multicolorinverted {
+  0%   {  color: #FFF;    }
+  20%  {  color: #c90000; }
+  40%  {  color: #c39132; }
+  60%  {  color: #0ad1e9; }
+  80%  {  color: #f3f173; }
+  100% {  color: #FFF;    }
+}
+
+@keyframes opacity0 {
+  0%    { opacity: 1; }
+  100%  { opacity: 0; }
+}
+
+@keyframes opacity100 {
+  0%    { opacity: 0; }
+  100%  { opacity: 1; }
+}
+
+@keyframes placeholderPulse1 {
+  0%, 50%, 100%  { opacity: .7;  }
+  25%, 75% { opacity: .3; }
+}
+
+@keyframes placeholderPulse2 {
+  0%, 50%, 100% { opacity: .4;  }
+  25%, 75% { opacity: .2; }
+}
+
+@keyframes placeholderPulse3 {
+  0%, 50%, 100% { opacity: .3;  }
+  25%, 75% { opacity: .1; }
+}
+
+@keyframes placeholderPulse4 {
+  0%, 50%, 100% { opacity: .2;  }
+  25%, 75% { opacity: .1; }
+}
+
+@keyframes pulse {
+  0%   {  opacity: 1;  }
+  50%  {  opacity: .5; }
+  100% {  opacity: 1;  }
+}
+
+@keyframes shakeit {
+  0%    { transform: translate(0,0);         }
+  0.1%  { transform: translate(-2px, -2px);  }
+  0.1%  { transform: translate(2px, -2px);   }
+  0.3%  { transform: translate(-2px, 2px);   }
+  0.4%  { transform: translate(2px, 2px);    }
+  0.5%  { transform: translate(0,0);         }
+  0.6%  { transform: translate(-2px, -2px);  }
+  0.7%  { transform: translate(2px, -2px);   }
+  0.8%  { transform: translate(-2px, 2px);   }
+  0.9%  { transform: translate(2px, 2px);    }
+  1%    { transform: translate(0,0);         }
+}
+
+@keyframes stretchshrinknormal {
+  0%  { transform: scale(1);   }
+  33% { transform: scale(1.5); }
+  66% { transform: scale(.5);  }
+}
+
+.animate {
+  &-await {
+    animation: shakeit 30s linear 20s infinite;
+  }
+
+  &-bggradientflow {
+    background-size: 200%;
+    background-position: 0 0;
+    animation: bggradientflow 50s ease infinite;
+  }
+
+  &-bggradienttextflow {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    background-position: 0 0;
+    animation: bggradientflow 50s ease infinite;
+  }
+
+  &-fade {
+    &--in {
+      animation: opacity100 1s ease-in forwards;
+    }
+    &--out {
+      animation: opacity0 1s ease-in forwards;
+    }
+  }
+
+  &-loading {
+    pointer-events: none;
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  &-movebgstripes {
+    background-size: 200% 200%;
+    animation: movebgstripes 20s linear infinite;
+  }
+
+  &-multicolor {
+    animation: multicolor 20s linear infinite;
+
+    &--inverted {
+      animation: multicolorinverted 20s linear infinite;
+    }
+  }
+
+  &-pop {
+    animation: stretchshrinknormal .3s ease-in-out infinite;
+  }
+
+  &-poppulse {
+    animation:
+      stretchshrinknormal .3s ease-in-out 1s forwards,
+      pulse 4.375s ease-in-out 1.3s infinite;
+  }
+
+  &-pulse {
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  /* Modifiers */
+
+  &--slow {
+    animation-duration: 17.5s !important;
+  }
+  &--slower {
+    animation-duration: 35s !important;
+  }
+  &--slowest {
+    animation-duration: 70s !important;
+  }
+  &--fast {
+    animation-duration: .7s !important;
+  }
+  &--faster {
+    animation-duration: .35s !important;
+  }
+  &--fastest {
+    animation-duration: .175s !important;
+  }
+
+  &--once {
+    animation-iteration-count: inherit !important;
+    animation-fill-mode: forwards !important;
+  }
+  &--endless {
+    animation-iteration-count: infinite !important;
+  }
+
+  &--delay {
+    animation-delay: 1s !important;
+  }
+}

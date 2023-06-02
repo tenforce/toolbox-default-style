@@ -1,0 +1,38 @@
+.step-header,
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    padding-left: 1rem;
+  }
+}
+
+.step-header {
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: .5rem;
+  padding-left: .5rem;
+
+  + .toolbox-tabs {
+    margin-top: -.5rem;
+  }
+}
+
+.section-header {
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: .5rem;
+
+  h4 {
+    line-height: 1;
+  }
+}

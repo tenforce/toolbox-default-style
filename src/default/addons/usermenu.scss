@@ -1,0 +1,102 @@
+.usermenu {
+  position: relative;
+  padding: 34px 8px 10px;
+  background-color: rgba(73, 73, 73, 0.5);
+  border-radius: 10px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .75;
+    z-index: 1;
+    border-radius: 10px;
+    background: linear-gradient(151deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(242, 242, 242, 0.3) 50%, rgba(255, 255, 255, 0.1) 60%, rgba(255, 255, 255, 0.5) 100%);
+    pointer-events: none;
+  }
+
+  * {
+    backface-visibility: hidden;
+  }
+
+  &__paper {
+    position: relative;
+    display: flex;
+    background-color: #FFF;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &__cover {
+    flex: 1 1 0%;
+  }
+
+  &__nav {
+    flex: 1 1 0%;
+
+    > ul {
+      list-style: none;
+      margin: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 1.5rem 2rem 1.5rem 2rem;
+
+      > li {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__profile {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 99999px;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  &__pin {
+    position: absolute;
+    top: 13px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 8px;
+    border-radius: 99999px;
+    background-color: #1B1B1B;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 3px;
+      width: calc(100% - 6px);
+      height: 200px;
+      background-color: #2D2C2C;
+      background: repeating-linear-gradient(90deg, #252525, #252525 1px, #2D2D2D 5px, #2D2D2D 6px);
+      background: linear-gradient(to bottom, rgba(45,44,44,1) 0%,rgba(45,44,44,1) 98%,rgba(19,18,18,1) 100%);
+      box-shadow: inset 0px -5px 5px -2px #0c0c0c, 0px -5px 3px -1px #000000;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .usermenu__paper {
+    width: 500px;
+  }
+}

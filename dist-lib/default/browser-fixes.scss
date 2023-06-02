@@ -1,0 +1,36 @@
+//.chrome {}
+
+//.firefox {}
+
+.ie {
+  // used for welcome page greeting
+  .theme-blurred-text {
+    display: none;
+  }
+}
+
+.safari {
+  a {
+    &:not(.toolbox-action),
+    .is-underline {
+      box-shadow: inset 0 -.09em;
+
+      &:active,
+      &:focus,
+      &:hover,
+      &:link,
+      &:visited {
+        box-shadow: inset 0 -.09em;
+      }
+
+      &.no-underline {
+        text-decoration: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  sup {
+    line-height: unset;
+  }
+}

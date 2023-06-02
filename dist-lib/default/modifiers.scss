@@ -1,0 +1,406 @@
+.is-hidden {
+  display: none;
+}
+
+.is-invisible {
+  visibility: hidden;
+}
+
+.is-visible {
+  display: block;
+  visibility: visible;
+}
+
+.is-ghost {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.is-dimmed {
+  opacity: .5;
+}
+
+.is-limited {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 21.563rem;
+}
+
+.is-unlimited {
+  max-width: none;
+}
+
+.is-ellipsed {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.is-ellipsedx3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.is-loading {
+  pointer-events: none;
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+
+  &--slow,
+  &--x3 {
+    animation-duration: 3s;
+  }
+}
+
+.is-active {
+  cursor: default;
+  pointer-events: none;
+  color: #000;
+  background: none;
+  background-color: transparent;
+  box-shadow: none;
+
+  &:active,
+  &:focus,
+  &:hover,
+  &:link,
+  &:visited {
+    filter: none;
+    background: none;
+    box-shadow: none;
+    animation: none;
+    transform: none;
+  }
+}
+
+.is-disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+  filter: grayscale(1) brightness(.85);
+  opacity: .5;
+
+  &.is-hidden-action {
+    opacity: 0 !important;
+  }
+
+  * {
+    cursor: not-allowed;
+
+    &:hover {
+      top: 0 !important;
+      transform: none !important;
+    }
+  }
+
+  &:active,
+  &:focus,
+  &:hover,
+  &:link,
+  &:visited {
+    filter: grayscale(1) brightness(.85);
+    text-shadow: none;
+    box-shadow: none;
+    animation: none;
+    transform: none;
+    top: 0;
+  }
+
+  @at-root input#{&}, textarea#{&} {
+    box-shadow: none;
+  }
+}
+
+.is-draggable:hover {
+  cursor: move;
+}
+
+.is-draggable-y:hover {
+  cursor: ns-resize;
+}
+
+.is-draggable-x:hover {
+  cursor: ew-resize;
+}
+
+.is-draggable,
+.is-draggable-y,
+.is-draggable-x {
+  &.bg-cloud {
+    background-color: #F4F4F4;
+  }
+}
+
+.is-readonly,
+.is-readonly * {
+  text-shadow: none;
+  box-shadow: none !important;
+  animation: none;
+  border-color: transparent;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  cursor: auto;
+
+  &:active,
+  &:focus,
+  &:hover,
+  &:link,
+  &:visited {
+    text-shadow: none;
+    box-shadow: none !important;
+    animation: none;
+    transform: none;
+    cursor: text;
+    top: 0 !important;
+    opacity: 1 !important;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+}
+
+.is-deactivated,
+.is-deactivated * {
+  text-shadow: none;
+  box-shadow: none;
+  animation: none;
+  border-color: transparent;
+  filter: grayscale(1);
+  filter: grayscale(1) brightness(0.98);
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  text-decoration: line-through;
+
+  &:active,
+  &:focus,
+  &:hover,
+  &:link,
+  &:visited {
+    text-shadow: none;
+    box-shadow: none;
+    animation: none;
+    transform: none;
+    cursor: text;
+    top: 0 !important;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+}
+
+.is-focused {
+  text-shadow: 0 0 1.25rem;
+
+  @at-root a#{&} {
+    text-shadow: 0 0 1.25rem #945e00;
+  }
+
+  @at-root .toolbox-action--btn#{&} {
+    text-shadow: none;
+    box-shadow: 0 0 1.25rem #00B3FD;
+  }
+
+  @at-root .toolbox-selector__item#{&} {
+    outline: 0;
+    text-shadow: none;
+    box-shadow: 0 0 1.25rem #000000; /* IE fix */
+    box-shadow: 0 0 1.25rem #00000080;
+  }
+
+  @at-root .NewUI-card#{&} {
+    text-shadow: none;
+    box-shadow: 0 0 1.25rem #999;
+  }
+}
+
+.is-stripped,
+.is-stripped * {
+  background: none;
+  background-color: transparent;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.is-transparent,
+.is-transparent::before,
+.is-transparent::after {
+  background: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.is-dashed,
+.is-dashed::before,
+.is-dashed::after {
+  border-style: dashed;
+}
+
+.is-dotted,
+.is-dotted::before,
+.is-dotted::after {
+  border-style: dotted;
+}
+
+.is-inverted {
+  color: #FFF;
+}
+
+.is-underline {
+  box-shadow: inset 0 -.07em;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active,
+  &:focus {
+    box-shadow: inset 0 -.07em;
+  }
+}
+
+a.no-underline {
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.is-permalink,
+.is-permalink * {
+  cursor: pointer;
+
+  &::before {
+    background-color: #945E00;
+  }
+}
+
+.has-global-hidden-actions {
+  position: relative;
+
+  &:hover {
+    .is-global-hidden-action {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &:focus-within .is-global-hidden-action {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.has-hidden-actions {
+  position: relative;
+
+  &:hover {
+    .is-hidden-action,
+    .is-hidden-panel {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .is-disabled {
+      opacity: 0.5 !important;
+      pointer-events: none;
+    }
+  }
+
+  &:focus-within .is-hidden-action {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.is-global-hidden-action,
+.is-hidden-action {
+  opacity: 0;
+  pointer-events: none;
+  min-width: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+.has-upload-input {
+  position: relative;
+
+  input[type=file] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    font-size: 1px;
+    cursor: pointer;
+  }
+}
+
+.is-placeholder {
+  pointer-events: none;
+
+  * {
+    box-shadow: none !important;
+    text-overflow: clip !important;
+    font-style: normal !important;
+
+    &::-webkit-input-placeholder,
+    &::placeholder {
+      color: grey;
+    }
+
+    .is-dimmed {
+      opacity: 1;
+    }
+
+    &::-webkit-input-placeholder,
+    &::placeholder {
+      font-style: normal;
+    }
+  }
+
+  > * {
+    &:last-child {
+      opacity: .3;
+      animation: placeholderPulse4 10s ease-in-out 1.5s infinite;
+    }
+
+    opacity: .5;
+    animation: placeholderPulse3 10s ease-in-out 1s infinite;
+
+    &:nth-of-type(2) {
+      opacity: .7;
+      animation: placeholderPulse2 10s ease-in-out .5s infinite;
+    }
+
+    &:first-child {
+      opacity: .9;
+      animation: placeholderPulse1 10s ease-in-out infinite;
+    }
+  }
+}
+
+.is-hiddenlink {
+  color: inherit;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.is-canceled {
+  pointer-events: none;
+  text-decoration: line-through;
+  text-decoration-color: red;
+  text-decoration-style: wavy;
+}
+
+.is-link {
+  box-shadow: inset 0 -0.07em #945e00;
+}

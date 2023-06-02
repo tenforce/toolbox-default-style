@@ -1,0 +1,278 @@
+/* TenForce Colors Palette */
+
+.text-aureolin {
+  color: #FFE600;
+}
+
+.text-cadmium-red {
+  color: #FF3232;
+}
+
+.text-deepskyblue {
+  color: #5FF2FF;
+}
+
+.text-eminence {
+  color: #F47BFF;
+}
+
+.text-goldenrod {
+  color: #FFA200;
+}
+
+.text-jade {
+  color: #30FF00;
+}
+
+.text-jet {
+  color: #999;
+}
+
+.text-nickel {
+  color: #CCC;
+}
+
+.text-platinum {
+  color: #F2F2F2;
+}
+
+.is-inverted {
+  .text-aureolin {
+    color: #FDEE00;
+  }
+
+  .text-cadmium-red {
+    color: #E30022;
+  }
+
+  .text-deepskyblue {
+    color: #00BFFF;
+  }
+
+  .text-eminence {
+    color: #6C3082;
+  }
+
+  .text-goldenrod {
+    color: #DAA520;
+  }
+
+  .text-jade {
+    color: #30ff00;
+  }
+
+  .text-jet {
+    color: #343434;
+  }
+
+  .text-nickel {
+    color: #BDBAAE;
+  }
+
+  .text-platinum {
+    color: #E5E4E2;
+  }
+}
+
+.bg-aureolin {
+  background-color: #FFE600;
+}
+
+.bg-cadmium-red {
+  background-color: #FF3232;
+}
+
+.bg-deepskyblue {
+  background-color: #5FF2FF;
+}
+
+.bg-eminence {
+  background-color: #F47BFF;
+}
+
+.bg-goldenrod {
+  background-color: #FFA200;
+}
+
+.bg-jade {
+  background-color: #30FF00;
+}
+
+.bg-jet {
+  background-color: #999;
+}
+
+.bg-nickel {
+  background-color: #CCC;
+}
+
+.bg-platinum {
+  background-color: #F2F2F2;
+}
+
+.is-inverted {
+  .bg-aureolin {
+    background-color: #FDEE00;
+  }
+
+  .bg-cadmium-red {
+    background-color: #E30022;
+  }
+
+  .bg-deepskyblue {
+    background-color: #00BFFF;
+  }
+
+  .bg-eminence {
+    background-color: #6C3082;
+  }
+
+  .bg-goldenrod {
+    background-color: #DAA520;
+  }
+
+  .bg-jade {
+    background-color: #00A86B;
+  }
+
+  .bg-jet {
+    background-color: #343434;
+  }
+
+  .bg-nickel {
+    background-color: #BDBAAE;
+  }
+
+  .bg-platinum {
+    background-color: #E5E4E2;
+  }
+}
+
+/* Colors Extra */
+
+.text-action {
+  color: #945E00;
+}
+
+.text-black {
+  color: #000;
+}
+
+.text-default {
+  color: inherit;
+}
+
+.text-primary {
+  color: #00B3FD;
+}
+
+.text-white {
+  color: #FFF;
+}
+
+.bg-action {
+  background-color: #945E00;
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.bg-cloud {
+  background-color: rgba(140, 140, 140, .1);
+}
+
+.bg-dark {
+  background-color: #B3B3B3;
+}
+
+.bg-darkcloud {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.bg-darker {
+  background-color: #808080;
+}
+
+.bg-darkest {
+  background-color: #343434;
+}
+
+.bg-default {
+  background-color: #FFF;
+}
+
+.bg-light {
+  background-color: #DCDCDC;
+}
+
+.bg-lighter {
+  background-color: #EAEAEA;
+}
+
+.bg-lightest {
+  background-color: #F3F5F7;
+}
+
+.bg-oil {
+  background-color: #1B1B1B;
+}
+
+.bg-primary {
+  background-color: #00B3FD;
+}
+
+.bg-transparent {
+  background: none;
+  background-color: transparent;
+}
+
+.bg-white {
+  background-color: #FFF;
+}
+
+.is-inverted {
+  .text-action {
+    color: #D99B00;
+  }
+
+  .bg-action {
+    background-color: #D99B00;
+  }
+
+  .bg-default {
+    background-color: #000;
+  }
+}
+
+/* Other Inverted Colors */
+
+.is-inverted {
+  color: #FFF;
+
+  .toolbox-action {
+    &:not(.toolbox-action--btn):not(.toolbox-action--scriptbtn) {
+      color: #D99B00;
+    }
+
+    &.is-disabled {
+      &:not(.toolbox-action--btn):not(.toolbox-action--scriptbtn) {
+        opacity: .5;
+      }
+    }
+  }
+
+  .theme-widget {
+    color: #D99B00;
+  }
+}
+
+/* Specials */
+
+.is-draggable,
+.is-draggable-y,
+.is-draggable-x {
+  &.bg-cloud {
+    background-color: #F3F3F3;
+  }
+}

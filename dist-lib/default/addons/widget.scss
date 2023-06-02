@@ -1,0 +1,34 @@
+.theme-widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: none;
+  color: #945e00;
+  width: -webkit-fill-available;
+  height: 100%;
+  min-height: 105px;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s ease-in-out;
+}
+
+button.theme-widget,
+a.theme-widget {
+  position: relative;
+  top: 0;
+  box-shadow: none;
+  transition: all .25s ease-in-out;
+
+  &:hover {
+    top: 2px;
+  }
+
+  &:focus,
+  &.is-focused {
+      text-shadow: none;
+      box-shadow: 0 0 20px #999;
+    }
+}

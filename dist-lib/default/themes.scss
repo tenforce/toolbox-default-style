@@ -1,0 +1,322 @@
+.theme {
+  &-bubble {
+    border-radius: .75rem;
+
+    @at-root a#{&}, button#{&} {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  &-step {
+    border-top: 0.125rem dashed #F5F5F5;
+    border-bottom: 0.125rem dashed #E8E8E8;
+    box-shadow: 0 1rem 1.625rem -0.625rem rgba(0,0,0,.2);
+
+    &--first {
+      border-top: 2px solid transparent;
+    }
+
+    &--last {
+      border-bottom: 0;
+    }
+  }
+
+  &-progress {
+    position: relative;
+    padding: 0 0 0 1.5rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: -.25rem;
+      left: 0;
+      border-radius: 1.875rem;
+      width: .5rem;
+      background-color: #DADCDE;
+      z-index: 0;
+    }
+
+    &--loose {
+      padding: .5rem 0 .5rem 1.5rem;
+
+      &::before {
+        top: .5rem;
+        bottom: .5rem;
+      }
+    }
+
+    &--done {
+      &::before {
+        background-color: #00B3FD;
+        z-index: 1;
+      }
+    }
+  }
+
+  &-progressbar {
+    position: relative;
+    width: 100%;
+    border-radius: 999999px;
+    height: auto;
+    padding: .25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: none;
+  }
+
+  &-card-link {
+    background-color: #FFF;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.125rem rgba(0,0,0,.25);
+  }
+
+  &-layers {
+    position: relative;
+    width: 100%;
+    height: 15px;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    > span {
+      position: absolute;
+      top: 0;
+      height: 5px;
+      border-radius: 4px 4px 0 0;
+
+      &:nth-of-type(1) {
+        top: 10px;
+        left: .25rem;
+        right: 5px;
+      }
+
+      &:nth-of-type(2) {
+        top: 5px;
+        left: .5rem;
+        right: 10px;
+      }
+
+      &:nth-of-type(3) {
+        left: .75rem;
+        right: 15px;
+      }
+    }
+  }
+
+  &-smartlist {
+    .theme-layers {
+      position: relative;
+      width: 100%;
+      height: 15px;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      > span {
+        position: absolute;
+        top: 0;
+        height: 5px;
+        border-radius: 4px 4px 0 0;
+
+        &:nth-of-type(1) {
+          top: 10px;
+          left: .25rem;
+          right: .25rem;
+        }
+
+        &:nth-of-type(2) {
+          top: 5px;
+          left: .5rem;
+          right: .5rem;
+        }
+      }
+    }
+  }
+
+  &-settings {
+    background-image: repeating-linear-gradient(-230deg, #FFF, #FFF 20px, #F5F6F8 20px, #F5F6F8 40px);
+  }
+
+  &-asset {
+    position: relative;
+    display: inline-block;
+    background-color: #E6E6E6;
+    border-radius: 5px 5px 3px 3px;
+    color: #000;
+    text-decoration: none;
+    box-shadow: none;
+
+    &--stripped {
+      background-color: transparent;
+      border: 2px dashed #FFF;
+
+      &::after {
+        display: none;
+      }
+
+      .theme-layers {
+        > span {
+          background-color: transparent;
+
+          &:nth-of-type(1) {
+            border-top: 2px dashed #4D4D4D;
+          }
+          &:nth-of-type(2) {
+            border-top: 2px dashed #808080;
+          }
+          &:nth-of-type(3) {
+            border-top: 2px dashed #B3B3B3;
+          }
+        }
+      }
+    }
+
+    &--smart {
+      .theme-layers {
+        > span {
+          &:nth-of-type(2) {
+            opacity: .6;
+          }
+          &:nth-of-type(3) {
+            opacity: .3;
+          }
+        }
+      }
+    }
+  }
+
+  &-identity {
+    display: inline-block;
+    position: relative;
+    background-color: #5A5A5A;
+    border-radius: 5px;
+    padding: 40px 5px 5px 5px;
+    color: #000;
+    text-decoration: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 10px;
+      border-radius: 15px;
+      background-color: #343434;
+      border: 2px solid #343434;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 40px;
+      border-radius: 5px;
+      background: linear-gradient(170deg, rgba(255, 255, 255, .1) 0%,rgba(255, 255, 255, .1) 50%,rgba(214, 214, 214, .2) 50%,rgba(214, 214, 214, 0.2) 99%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+      padding: .75rem;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      overflow: hidden;
+      background-color: #FFF;
+      border-radius: 5px;
+    }
+
+    &--stripped {
+      background-color: transparent;
+      border: 2px dashed rgba(193, 193, 193, 1);
+
+      &::before {
+        background-color: transparent;
+        border: 2px dashed rgba(193, 193, 193, 1);
+      }
+      &::after {
+        display: none;
+      }
+
+      > * {
+        background-color: transparent;
+      }
+    }
+
+    &--suggested {
+      background-color: transparent;
+      border: 2px dashed rgba(193, 193, 193, 1);
+
+      &::before {
+        background-color: transparent;
+        border: 2px dashed rgba(193, 193, 193, 1);
+      }
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &-tutorial {
+    background-color: #F7F7F7;
+    box-shadow: 0 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.2);
+    border-radius: 0.125rem;
+  }
+
+  &-note {
+    border: 0.065rem dashed #E2E2E2;
+    border-radius: .5rem;
+  }
+
+  &-blurred-text {
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient(-45deg, #E30022 0%, #00BFFF 100%);
+    filter: blur(30px) contrast(3);
+    pointer-events: none;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.0, 1.0);
+  }
+
+  &-sponsor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: 116px;
+    background-position: center;
+    background-repeat: repeat;
+    opacity: .1;
+    pointer-events: none;
+  }
+
+  &-float {
+    box-shadow: 0 1rem 1.625rem -0.625rem #ccc; // IE fix
+    box-shadow: 0 1rem 1.625rem -0.625rem #00000033;
+  }
+
+  &-link {
+    position: relative;
+    color: inherit;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #945e00;
+    }
+  }
+}
